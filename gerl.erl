@@ -93,6 +93,15 @@ mate(Organism1, Organism2) ->
     Organism2Gene = random_subtree(Organism2),
     [replace(Organism1, Organism2Gene), replace(Organism2, Organism1Gene)].
 
+behaviour_info(callbacks) ->
+    [{functions, 0},
+     {terminals, 0},
+     {fitness,   1}];
+
+behaviour_info(_) ->
+    undefined.
+
 test() -> 
     true = 3 =:= depth({mul, [{mul, [10,20]}, 2]}),
     true = 10 =:= lookup_variable(x, [{x,10}]).
+

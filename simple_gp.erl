@@ -1,5 +1,6 @@
 -module(simple_gp).
--compile(export_all).
+-behaviour(gerl).
+-export([functions/0, terminals/0, fitness/1]).
 
 functions() ->
     [{add, 2, fun(V, [X, Y]) -> gerl:evaluate(?MODULE, V, X) + gerl:evaluate(?MODULE, V, Y) end},
