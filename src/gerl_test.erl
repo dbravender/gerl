@@ -18,3 +18,6 @@ update_variable_test() ->
 generate_test() ->
     random:seed({21015,29080,278}),
     ?assert({add,[{mul,[{y,[]},{y,[]}]},{sub,[{add,[{x,[]},{x,[]}]},{x,[]}]}]} =:= gerl:generate(simple_gp)).
+
+run_cover() ->
+    coverize:run(["./src"], gerl_test).
